@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import Preview from './preview';
 
 class Visualizer extends Component {
-
   onMouseDown = (e) => {
     let i = e.nativeEvent.offsetY / this.props.height;
     let onVisualizerClick = this.props.onVisualizerClick;
@@ -21,8 +21,9 @@ class Visualizer extends Component {
     let position = this.props.position;
 
     return (
-      <div onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
-        <svg width={width} height={height}>
+      <div onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} style={{position: 'relative'}}>
+        <Preview width={width} height={height} profile={profile} />
+        <svg width={width} height={height} style={{position: 'absolute', top: 0, left: 0}}>
           {profile.map((p, i) => {
             return <circle cx={width / 2 + p * offset} cy={height * i / profile.length} r={r} stroke="black" fill="red" />
           })}

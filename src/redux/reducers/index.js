@@ -22,7 +22,7 @@ let appReducer = (state, action) => {
         {id: 'Pinch', influence: (t) => {return t}, thumbnail: '#'},
         {id: 'Triangle', influence: (t) => {return t}, thumbnail: '#'}
       ],
-      profile: Array(100).fill().map((_) => 0)
+      profile: Array(50).fill().map((_) => 0)
     }
   }
 
